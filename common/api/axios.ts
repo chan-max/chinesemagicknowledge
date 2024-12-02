@@ -55,6 +55,14 @@ export const getUserInfo = () => new Promise(async (resolve, reject) => {
 })
 
 
+export const getDreamList = (params) => new Promise(async (resolve, reject) => {
+    let res = await api.post('/api/dream/page', params)
+    resolve(res.data)
+})
+
+
+
+
 export default {
-    login, logout, getUserInfo, signup, updateUserInfo
+    login, logout, getUserInfo, signup, updateUserInfo, getDreamList
 };
