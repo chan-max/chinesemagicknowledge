@@ -19,6 +19,8 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: config.metaDescription },
         { hid: 'keywords', name: 'keywords', content: config.metaKeywords },
+
+        { name: 'google-site-verification', content: 'RxzvybBzhRLs6_sRKyieVlgNGdkRfxpPM819uINVRE8' },
       ],
       htmlAttrs: {
         lang: 'en',
