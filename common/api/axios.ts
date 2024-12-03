@@ -60,9 +60,12 @@ export const getDreamList = (params) => new Promise(async (resolve, reject) => {
     resolve(res.data)
 })
 
-
+export const getDreamById = (id) => new Promise(async (resolve, reject) => {
+    let res = await api.get(`/api/dream/${id}`)
+    resolve(res.data)
+})
 
 
 export default {
-    login, logout, getUserInfo, signup, updateUserInfo, getDreamList
+    login, logout, getUserInfo, signup, updateUserInfo, getDreamList,getDreamById
 };

@@ -61,19 +61,7 @@
   </div>
 </template>
 
-<script setup>
-import { getDreamList } from "@/common/api/axios";
-import { usePagination } from "@/common/paging";
-const { list, getList, loading, getPreList, total } = usePagination(getDreamList, {
-  preprocessParams: (params) => {
-    params.pageSize = 10;
-    return params;
-  },
-  defaultCurrentPage: 1,
-});
-
-getList();
-</script>
+<script setup></script>
 
 <style scoped>
 /* Add optional custom styles */

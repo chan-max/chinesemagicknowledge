@@ -171,7 +171,7 @@ const items = [
 
 const tabs = [
   { label: "Books", path: "/books" },
-  { label: "Dream", path: "/dream" },
+  { label: "Dreams", path: "/dreams" },
   { label: "Pricing", path: "/pricing" },
 ];
 
