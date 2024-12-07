@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DatePicker as VCalendarDatePicker, } from "v-calendar";
+import { DatePicker as VCalendarDatePicker } from "v-calendar";
 import "v-calendar/dist/style.css";
 
 defineOptions({
@@ -43,7 +43,7 @@ const attrs = {
   color: "primary",
   "is-dark": { selector: "html", darkClass: "dark" },
   "first-day-of-week": 2,
-  locale: locale.value,
+  locale: "en",
   mode: props.mode,
   // masks:locale.value == 'zh' ? ChineseMask : null
 };

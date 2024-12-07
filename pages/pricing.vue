@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen flex flex-col items-center">
     <div>
       <!-- Page Title -->
       <div class="text-center mb-12">
@@ -59,10 +59,14 @@
         </div>
       </div>
     </div>
+
+    <div id="paypal-checkout" class="p-6"></div>
   </div>
 </template>
 
 <script setup>
+let nuxtApp = useNuxtApp();
+
 const pricingPlans = [
   {
     title: "Basic",
@@ -106,10 +110,39 @@ const pricingPlans = [
   },
 ];
 
+onMounted(async () => {
+  await usePaypalButton({
+    createOrder: function (data, actions) {
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: 100, // 动态设置金额
+              currency_code: "USD",
+            },
+          },
+        ],
+      });
+    },
+    onApprove: async (data, actions) => {
+      try {
+        const details = await actions.order?.capture();
+        console.log("Payment completed successfully:", details);
+      } catch (error) {
+        console.error("Error capturing payment:", error);
+      }
+    },
+  });
+});
+
 // Function to calculate the discounted price
 const calculateDiscountedPrice = (price, discount) => {
   return (price * (1 - discount / 100)).toFixed(2);
 };
+
+const nuxt = useNuxtApp();
+
+console.log(nuxt.$paypal?.version);
 </script>
 
 <style scoped>

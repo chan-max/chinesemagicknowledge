@@ -67,5 +67,5 @@ export const getDreamById = (id) => new Promise(async (resolve, reject) => {
 
 
 export default {
-    login, logout, getUserInfo, signup, updateUserInfo, getDreamList,getDreamById
+    login, logout, getUserInfo, signup, updateUserInfo, getDreamList, getDreamById
 };

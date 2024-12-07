@@ -5,7 +5,9 @@ export default defineNuxtConfig({
   ssr: false,
   // ssr:true,target:'static',
   vite: {
-    plugins: [vueJsx()], // 加载 Vue JSX 插件
+    plugins: [vueJsx(),], // 加载 Vue JSX 插件
+
+
   },
   typescript: {
     shim: false, // 禁用 shim，提高类型推断能力
@@ -46,7 +48,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  css: ['~/public/fullpage.css', '~/assets/main.scss', 'animate.css/animate.min.css',],
+  css: ['~/public/fullpage.css', '~/assets/main.scss', '~/assets/md.css', 'animate.css/animate.min.css',],
   build: {
     transpile: ['element-plus'], // 确保正确编译 Element Plus
   },
@@ -57,8 +59,10 @@ export default defineNuxtConfig({
     '@ant-design-vue/nuxt',
     "@stefanobartoletti/nuxt-social-share",
     '@pinia/nuxt',
+    'nuxt-paypal',
     '@nuxtjs/i18n',
     '@nuxt/content',
+    'nuxt-paypal',
   ],
   // gtm: {
   //   id: config.gtmID,
@@ -84,5 +88,9 @@ export default defineNuxtConfig({
     strategy: 'no_prefix', // URL strategy
     vueI18n: './i18n.config.ts', // Path to Vue I18n configuration
     locales: ["en", "zh"], //配置语种
+  },
+  paypal: {
+    clientId: 'AdOWq5VdofoxJKPNX7U7SMKF-pdRrzjbZ5aftu_peFlDFsSx-m2BpO8_tkSCngK3hHTOvYyQq_0mm73T',
+    // ...options
   },
 })
